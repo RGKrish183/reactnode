@@ -3,14 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 import store from './store.js';
 import { Provider } from 'react-redux';
-import Example from './components/examplecomponent/example'
+import indexRoutes from './routes/index.jsx';
+import {  Route, Switch } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom'
+
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
       <div className="App">
-        <Example/>
+      <HashRouter>
+  
+  <Switch>
+    {indexRoutes.map((prop, key) => {
+      return <Route path={prop.path} key={key} component={prop.component} />;
+    })}
+  </Switch>
+
+</HashRouter>
       </div>
       </Provider>
     );

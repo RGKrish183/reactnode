@@ -9,7 +9,7 @@ class Examples extends Component {
   }
 
   render() {
-      this.props.exampleAction("action was called")
+      this.props.exampleAction("action was call")
     return (<div>
       <h1>Example</h1>
       <h2>{this.props.exampleaction}</h2>
