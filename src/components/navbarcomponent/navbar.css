@@ -1,0 +1,8 @@
+.topbar{
+    position:relative;
+    z-index: 50;
+}
+
+.show-sidebar .left-sidebar{
+    left:-250px;
+  }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import AllRoutes from '../routes/routing.jsx';
+import Navbars from '../components/navbarcomponent/navbarpage';
+import Sidebar from '../components/sidebarcomponent/sidebar';
 
 class Fulllayout extends React.Component {
 	/*--------------------------------------------------------------------------------*/
@@ -8,6 +10,13 @@ class Fulllayout extends React.Component {
 	/*--------------------------------------------------------------------------------*/
 	constructor(props) {
 		super(props);
+
+		this.props.history.listen((location, action) => {
+			if (window.innerWidth < 767) {
+				console.log("test");
+				document.getElementById('main-wrapper').classList.toggle("show-sidebar");
+			}
+		});
 		}
 
 
@@ -17,8 +26,10 @@ class Fulllayout extends React.Component {
 		/* Theme Setting && Layout Options wiil be Change From Here                       */
 		/*--------------------------------------------------------------------------------*/
 		return (
-		
-					<div className="page-content container-fluid">
+		<div id="main-wrapper">
+			<Navbars/>
+			<Sidebar/>
+					<div className="container-fluid">
 						<Switch>
 							{AllRoutes.map((prop, key) => {
 								if (prop.redirect) {
@@ -31,6 +42,7 @@ class Fulllayout extends React.Component {
 								}
 							})}
 						</Switch>
+					</div>
 					</div>
 				
               
