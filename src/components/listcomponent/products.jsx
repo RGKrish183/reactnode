@@ -17,27 +17,6 @@ class Products extends Component {
     }
   
 
-    Lists=()=>{
-       console.log("list")
-       console.log(this.props.booksReducer)
-       return this.props.booksReducer.results.map((data)=>{
-      return   <Col sm="4">
-        <Card >
-          <CardImg top width="20%" src={data.urls.small} alt={data.alt_description} />
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
-            <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-            <Button>Button</Button>
-          </CardBody>
-        </Card>
-        </Col>
-        
-        
-   
-        })
-      
-    }
 
 
 componentDidMount(){
@@ -48,14 +27,7 @@ componentDidMount(){
        
       return (
         <div>
-        <h1>Example</h1>
-        <Button className='btn btn-danger' type="button" >
-      Hello World
-    </Button>
-    <DeleteIcon  className={['test','clr']}  />
-
-    <button className='btn btn-danger'  type="button">Hi</button>
-
+        <h1>Products component</h1>
         </div>
       );
     }

@@ -1,23 +1,21 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors=require('cors');
-var bodyParser=require('body-parser');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const config = require('./config');
-const mongoose=require('mongoose');
-
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 
 mongoose.connect(config.db.url, { useNewUrlParser: true }).then(
-    () => console.log('Database connected successfully'),
-    (err) => { console.log(err); }
-  );
+  () => console.log('Database connected successfully'),
+  (err) => { console.log(err); },
+);
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
