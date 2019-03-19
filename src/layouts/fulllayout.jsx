@@ -27,8 +27,7 @@ class Fulllayout extends React.Component {
 		/*--------------------------------------------------------------------------------*/
 		return (
 		<div id="main-wrapper">
-			<Navbars/>
-			<Sidebar/>
+			
 					<div className="container-fluid">
 						<Switch>
 							{AllRoutes.map((prop, key) => {

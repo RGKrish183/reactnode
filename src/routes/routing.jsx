@@ -1,4 +1,5 @@
 import Example from '../components/examplecomponent/example.jsx';
+import Products from '../components/listcomponent/products';
 // ui components
 
 
@@ -10,6 +11,12 @@ var AllRoutes = [
     icon: 'ti-loop', 
     component: Example 
   },
-  { path: '/', pathTo: '/dashboard', name: 'Dashboard', redirect: true }
+  { 
+    path: '/products', 
+    name: 'Products', 
+    icon: 'ti-loop', 
+    component: Products
+  },
+  { path: '/', pathTo: '/products', name: 'Products', redirect: true }
 ];
 export default AllRoutes;
